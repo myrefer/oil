@@ -1765,7 +1765,7 @@ CLASS;
 
 		if (getenv('OIL_USE_MIGRATION_TIMESTAMP') == 1) {
 			$timestamp = time();
-			while($last != $timestamp)
+			while($last == $timestamp)
 			{
 				$timestamp = time();
 			}
