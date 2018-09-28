@@ -1763,6 +1763,15 @@ CLASS;
 			throw new Exception("Unable to read existing migrations. Path does not exist, or you may have an 'open_basedir' defined");
 		}
 
+		if (getenv('OIL_USE_MIGRATION_TIMESTAMP') == 1) {
+			$timestamp = time();
+			while($last != $timestamp)
+			{
+				$timestamp = time();
+			}
+			return $timestamp;
+		}
+
 		return str_pad($last + 1, 3, '0', STR_PAD_LEFT);
 	}
 
