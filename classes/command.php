@@ -37,6 +37,7 @@ class Command
 				if (\Cli::option('v', \Cli::option('version')))
 				{
 					\Cli::write('Fuel: '.\Fuel::VERSION.' running in "'.\Fuel::$env.'" mode');
+					\Cli::write('This oil version is forked by myrefer');
 					return;
 				}
 
